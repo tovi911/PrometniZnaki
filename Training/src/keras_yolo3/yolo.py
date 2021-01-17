@@ -258,6 +258,9 @@ def detect_video(yolo, video_path, output_path=""):
         frame = frame[:, :, ::-1]
         image = Image.fromarray(frame)
         out_pred, image = yolo.detect_image(image, show_stats=False)
+        
+        # Klasifikacija 
+
         result = np.asarray(image)
         curr_time = timer()
         exec_time = curr_time - prev_time

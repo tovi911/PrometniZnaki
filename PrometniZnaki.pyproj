@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>36c11b3d-5d41-4341-a86a-b593a87763ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PrometniZnaki.py</StartupFile>
+    <StartupFile>Training\Convert_YOLO_weights.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,7 +24,7 @@
     <Compile Include="Data\Model_Weights\Download_Weights.py" />
     <Compile Include="Inference\Detector.py" />
     <Compile Include="PrometniZnaki.py" />
-    <Compile Include="Training\Download_and_Convert_YOLO_weights.py" />
+    <Compile Include="Training\Convert_YOLO_weights.py" />
     <Compile Include="Training\src\keras_yolo3\coco_annotation.py" />
     <Compile Include="Training\src\keras_yolo3\convert.py" />
     <Compile Include="Training\src\keras_yolo3\kmeans.py" />
@@ -78,9 +78,11 @@
     <Content Include="Training\src\keras_yolo3\model_data\voc_classes.txt" />
     <Content Include="Training\src\keras_yolo3\model_data\yolo-tiny_anchors.txt" />
     <Content Include="Training\src\keras_yolo3\model_data\yolo_anchors.txt" />
+    <Content Include="Training\src\keras_yolo3\PrometniZnaki.cfg" />
     <Content Include="Training\src\keras_yolo3\README.md" />
     <Content Include="Training\src\keras_yolo3\yolov3-tiny.cfg" />
     <Content Include="Training\src\keras_yolo3\yolov3.cfg" />
+    <Content Include="Training\src\keras_yolo3\PrometniZnaki.weights" />
     <Content Include="Training\src\README.md" />
     <Content Include="Utils\Screenshots\CatVideo.gif" />
     <Content Include="Utils\Screenshots\Issue.gif" />

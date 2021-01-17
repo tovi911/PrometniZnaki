@@ -17,7 +17,7 @@ def get_parent_dir(n=1):
     return current_path
 
 
-src_path = os.path.join(get_parent_dir(2), "src")
+src_path = os.path.join(get_parent_dir(1), "PrometniZnaki\\Training\\src\\")
 sys.path.append(src_path)
 
 import numpy as np

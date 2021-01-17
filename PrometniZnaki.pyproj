@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>36c11b3d-5d41-4341-a86a-b593a87763ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Training\Convert_YOLO_weights.py</StartupFile>
+    <StartupFile>ImageDetector.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -43,6 +43,9 @@
     <Compile Include="Utils\Get_File_Paths.py" />
     <Compile Include="Utils\Train_Utils.py" />
     <Compile Include="Utils\utils.py" />
+    <Compile Include="VideoDetector.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />

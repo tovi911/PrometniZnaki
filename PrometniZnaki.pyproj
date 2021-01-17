@@ -21,7 +21,70 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Data\Model_Weights\Download_Weights.py" />
+    <Compile Include="Inference\Detector.py" />
     <Compile Include="PrometniZnaki.py" />
+    <Compile Include="Training\Download_and_Convert_YOLO_weights.py" />
+    <Compile Include="Training\src\keras_yolo3\coco_annotation.py" />
+    <Compile Include="Training\src\keras_yolo3\convert.py" />
+    <Compile Include="Training\src\keras_yolo3\kmeans.py" />
+    <Compile Include="Training\src\keras_yolo3\train.py" />
+    <Compile Include="Training\src\keras_yolo3\train_bottleneck.py" />
+    <Compile Include="Training\src\keras_yolo3\voc_annotation.py" />
+    <Compile Include="Training\src\keras_yolo3\yolo.py" />
+    <Compile Include="Training\src\keras_yolo3\yolo3\model.py" />
+    <Compile Include="Training\src\keras_yolo3\yolo3\utils.py" />
+    <Compile Include="Training\src\keras_yolo3\yolo3\__init__.py" />
+    <Compile Include="Training\src\keras_yolo3\yolo_video.py" />
+    <Compile Include="Training\Train_YOLO.py" />
+    <Compile Include="Utils\Convert_Format.py" />
+    <Compile Include="Utils\Get_File_Paths.py" />
+    <Compile Include="Utils\Train_Utils.py" />
+    <Compile Include="Utils\utils.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Data\Model_Weights\" />
+    <Folder Include="Data\Source_Images\" />
+    <Folder Include="Data\Source_Images\Test_Images\" />
+    <Folder Include="Data\Source_Images\Test_Image_Detection_Results\" />
+    <Folder Include="Data\Source_Images\Training_Images\" />
+    <Folder Include="Inference\" />
+    <Folder Include="Training\" />
+    <Folder Include="Training\AWS\" />
+    <Folder Include="Training\AWS\Screen_Recordings\" />
+    <Folder Include="Training\src\" />
+    <Folder Include="Training\src\keras_yolo3\" />
+    <Folder Include="Training\src\keras_yolo3\font\" />
+    <Folder Include="Training\src\keras_yolo3\model_data\" />
+    <Folder Include="Training\src\keras_yolo3\yolo3\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Utils\Screenshots\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include="Data\Model_Weights\data_classes.txt" />
+    <Content Include="Data\Model_Weights\Download_Weights.sh" />
+    <Content Include="Inference\README.md" />
+    <Content Include="requirements.txt" />
+    <Content Include="Training\AWS\README.md" />
+    <Content Include="Training\AWS\Screen_Recordings\AWS_Deep_Learning_AMI.gif" />
+    <Content Include="Training\README.md" />
+    <Content Include="Training\src\keras_yolo3\darknet53.cfg" />
+    <Content Include="Training\src\keras_yolo3\font\FiraMono-Medium.otf" />
+    <Content Include="Training\src\keras_yolo3\font\SIL Open Font License.txt" />
+    <Content Include="Training\src\keras_yolo3\LICENSE" />
+    <Content Include="Training\src\keras_yolo3\model_data\coco_classes.txt" />
+    <Content Include="Training\src\keras_yolo3\model_data\voc_classes.txt" />
+    <Content Include="Training\src\keras_yolo3\model_data\yolo-tiny_anchors.txt" />
+    <Content Include="Training\src\keras_yolo3\model_data\yolo_anchors.txt" />
+    <Content Include="Training\src\keras_yolo3\README.md" />
+    <Content Include="Training\src\keras_yolo3\yolov3-tiny.cfg" />
+    <Content Include="Training\src\keras_yolo3\yolov3.cfg" />
+    <Content Include="Training\src\README.md" />
+    <Content Include="Utils\Screenshots\CatVideo.gif" />
+    <Content Include="Utils\Screenshots\Issue.gif" />
+    <Content Include="Utils\Screenshots\PowerShell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

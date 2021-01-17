@@ -39,3 +39,12 @@ if __name__ == "__main__":
         call_string = f"python {download_folder}/convert.py {cfg_file} {weights_file} {h5_file}"
 
         subprocess.call(call_string, shell=True, cwd=download_folder)
+
+        h5w =  os.path.join(download_folder, h5_file)
+        cfg =  os.path.join(download_folder, cfg_file)
+
+        call_string = f"move {h5w} {model_folder}"
+        subprocess.call(call_string, shell=True, cwd=download_folder)
+
+        call_string = f"move {cfg} {model_folder}"
+        subprocess.call(call_string, shell=True, cwd=download_folder)

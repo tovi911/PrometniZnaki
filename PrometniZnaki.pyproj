@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>36c11b3d-5d41-4341-a86a-b593a87763ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ImageDetector.py</StartupFile>
+    <StartupFile>Training\Convert_YOLO_weights.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -60,14 +60,11 @@
     <Folder Include="Training\src\keras_yolo3\model_data\" />
     <Folder Include="Training\src\keras_yolo3\yolo3\" />
     <Folder Include="Utils\" />
-    <Folder Include="Utils\Screenshots\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include="Data\Model_Weights\data_classes.txt" />
     <Content Include="Data\Model_Weights\Download_Weights.sh" />
-    <Content Include="Data\Model_Weights\PrometniZnaki.cfg" />
-    <Content Include="Data\Model_Weights\PrometniZnaki.h5" />
     <Content Include="Data\Source_Images\Test_Images\Posnetek zaslona 2021-01-16 140842.jpg" />
     <Content Include="Data\Source_Images\Test_Images\Posnetek zaslona 2021-01-17 140407.jpg" />
     <Content Include="Data\Source_Images\Test_Images\Posnetek zaslona 2021-01-17 140456.jpg" />
@@ -83,16 +80,11 @@
     <Content Include="Training\src\keras_yolo3\model_data\voc_classes.txt" />
     <Content Include="Training\src\keras_yolo3\model_data\yolo-tiny_anchors.txt" />
     <Content Include="Training\src\keras_yolo3\model_data\yolo_anchors.txt" />
-    <Content Include="Training\src\keras_yolo3\PrometniZnaki.cfg" />
-    <Content Include="Training\src\keras_yolo3\PrometniZnaki.h5" />
     <Content Include="Training\src\keras_yolo3\README.md" />
     <Content Include="Training\src\keras_yolo3\yolov3-tiny.cfg" />
     <Content Include="Training\src\keras_yolo3\yolov3.cfg" />
     <Content Include="Training\src\keras_yolo3\PrometniZnaki.weights" />
     <Content Include="Training\src\README.md" />
-    <Content Include="Utils\Screenshots\CatVideo.gif" />
-    <Content Include="Utils\Screenshots\Issue.gif" />
-    <Content Include="Utils\Screenshots\PowerShell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

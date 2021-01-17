@@ -21,6 +21,65 @@ import tensorflow.python.keras.backend as K
 
 tf.disable_eager_execution()
 
+#######################################################################
+from keras.models import load_model
+#model klasifikacije
+klas_model = load_model('Data/Model_Weights/klas_prometni.h5')
+
+#klas
+classes = { 1:'Speed limit (20km/h)',
+            2:'Speed limit (30km/h)', 
+            3:'Speed limit (50km/h)', 
+            4:'Speed limit (60km/h)', 
+            5:'Speed limit (70km/h)', 
+            6:'Speed limit (80km/h)', 
+            7:'End of speed limit (80km/h)', 
+            8:'Speed limit (100km/h)', 
+            9:'Speed limit (120km/h)', 
+            10:'No passing', 
+            11:'No passing veh over 3.5 tons', 
+            12:'Right-of-way at intersection', 
+            13:'Priority road', 
+            14:'Yield', 
+            15:'Stop', 
+            16:'No vehicles', 
+            17:'Veh > 3.5 tons prohibited', 
+            18:'No entry', 
+            19:'General caution', 
+            20:'Dangerous curve left', 
+            21:'Dangerous curve right', 
+            22:'Double curve', 
+            23:'Bumpy road', 
+            24:'Slippery road', 
+            25:'Road narrows on the right', 
+            26:'Road work', 
+            27:'Traffic signals', 
+            28:'Pedestrians', 
+            29:'Children crossing', 
+            30:'Bicycles crossing', 
+            31:'Beware of ice/snow',
+            32:'Wild animals crossing', 
+            33:'End speed + passing limits', 
+            34:'Turn right ahead', 
+            35:'Turn left ahead', 
+            36:'Ahead only', 
+            37:'Go straight or right', 
+            38:'Go straight or left', 
+            39:'Keep right', 
+            40:'Keep left', 
+            41:'Roundabout mandatory', 
+            42:'End of no passing', 
+            43:'End no passing veh > 3.5 tons' }
+
+def classify(image):
+    global label_packed
+    cimage1 = image.resize((30,30))
+    cimage1 = np.expand_dims(cimage1, axis=0)
+    cimage1 = np.array(cimage1)
+    pred = klas_model.predict_classes([cimage1])[0]
+    sign = classes[pred+1]
+    return sign
+#######################################################################
 
 class YOLO(object):
     _defaults = {
@@ -257,9 +316,27 @@ def detect_video(yolo, video_path, output_path=""):
         # opencv images are BGR, translate to RGB
         frame = frame[:, :, ::-1]
         image = Image.fromarray(frame)
-        out_pred, image = yolo.detect_image(image, show_stats=False)
+        im2 = Image.fromarray(frame)
+        out_pred, image1 = yolo.detect_image(image, show_stats=False)
         
         # Klasifikacija 
+        image = im2
+        labels = []
+
+        for single_prediction in out_pred:
+            if single_prediction[5] > 0.5:
+                cimage  =  image.crop((single_prediction[0]-3, single_prediction[1]-3, single_prediction[2]+3, single_prediction[3]+3))
+                label = classify(cimage)
+                labels.append(label)
+
+        j = 0
+        for single_prediction in out_pred:
+            if single_prediction[5] > 0.5:
+                image_edit = ImageDraw.Draw(image)
+                image_edit.rectangle((single_prediction[0]-15, single_prediction[1]-15, single_prediction[2]+15, single_prediction[3]+15), outline = "red", width = 3)
+                font = ImageFont.truetype("arial.ttf", size = 30)
+                image_edit.text((single_prediction[0]-15, single_prediction[1]-35), labels[j], fill = (0,255,0,0), font = font, stroke_width = 1)
+                j = j + 1
 
         result = np.asarray(image)
         curr_time = timer()

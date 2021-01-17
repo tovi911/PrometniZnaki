@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>36c11b3d-5d41-4341-a86a-b593a87763ff</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ImageDetector.py</StartupFile>
+    <StartupFile>VideoDetector.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -86,7 +86,6 @@
     <Content Include="Training\src\keras_yolo3\README.md" />
     <Content Include="Training\src\keras_yolo3\yolov3-tiny.cfg" />
     <Content Include="Training\src\keras_yolo3\yolov3.cfg" />
-    <Content Include="Training\src\keras_yolo3\PrometniZnaki.weights" />
     <Content Include="Training\src\README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

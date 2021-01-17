@@ -13,7 +13,7 @@ from Utils.Get_File_Paths import GetFileList
 import random
 from Utils.Train_Utils import get_anchors
 
-yolo_tresh = 0.3
+yolo_tresh = 0.5
 
 current_path = os.path.dirname(os.path.abspath(__file__))
 data_folder = os.path.join(current_path, "Data")
